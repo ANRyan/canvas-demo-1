@@ -11,22 +11,19 @@
 
     <script>
       let canvas = document.getElementById("canvas");
-
-      var isTouchDevice = "ontouchstart" in document.documentElement;
-
       canvas.width = document.documentElement.clientWidth;
-
       canvas.height = document.documentElement.clientHeight;
-
       let ctx = canvas.getContext("2d");
+      ctx.fillStyle = "black";
+      ctx.strokeStyle = "black";
+      ctx.lineWidth = 4;
+      ctx.lineCap = "round";
 
       let painting = false;
 
       let last;
 
-      ctx.fillStyle = "blue";
-
-      ctx.strokeStyle = "none";
+      var isTouchDevice = "ontouchstart" in document.documentElement;
 
       if (isTouchDevice) {
         canvas.ontouchmove = (e) => {
